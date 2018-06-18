@@ -1,0 +1,574 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+
+    <title>Mis Campos</title>
+
+    <!-- Google font -->
+    <link href="https://fonts.googleapis.com/css?family=Montserrat:400,700%7CVarela+Round" rel="stylesheet">
+
+    <!-- Bootstrap -->
+    <link type="text/css" rel="stylesheet" href="css/bootstrap.min.css" />
+
+    <!-- Owl Carousel -->
+    <link type="text/css" rel="stylesheet" href="css/owl.carousel.css" />
+    <link type="text/css" rel="stylesheet" href="css/owl.theme.default.css" />
+
+    <!-- Magnific Popup -->
+    <link type="text/css" rel="stylesheet" href="css/magnific-popup.css" />
+
+    <!-- Font Awesome Icon -->
+    <link rel="stylesheet" href="css/font-awesome.min.css">
+
+    <!-- Custom stlylesheet -->
+    <link type="text/css" rel="stylesheet" href="css/style.css" />
+
+    <link href="sweetalert/dist/sweetalert2.css" rel="stylesheet">
+    <link href="toastr-master/build/toastr.min.css" rel="stylesheet" />
+
+    <link href="toastr/toastr.min.css" rel="stylesheet" />
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.13/css/all.css" integrity="sha384-DNOHZ68U8hZfKXOrtjWvjxusGo9WQnrNx2sqG0tfsghAvtVlRW3tvkXWZh58N9jp" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.13/css/all.css" integrity="sha384-DNOHZ68U8hZfKXOrtjWvjxusGo9WQnrNx2sqG0tfsghAvtVlRW3tvkXWZh58N9jp" crossorigin="anonymous">
+
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+		<script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
+		<script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
+    <style>
+
+        div#map {
+            width: 500px;
+            border: 8px* solid black;
+            align-content: center;
+            justify-content: center;
+            width: auto;
+            height: 94vh;
+            align-items: center;
+            text-align: center;
+        }
+        </style>
+        <script src="js/Chart.bundle.js"></script>
+        <script src="js/utils.js"></script>
+        <script>
+
+function alerta(){
+if(VaIn.value=='0'){alert('Ésta es la primera vez que se abre la página en esta sesión.');
+VaIn.value='1'}
+}
+
+</script>
+    </head>
+
+    <body onload=alerta()>
+      <script src="toastr/jquery-3.3.1.js"></script>
+    <script src="toastr/toastr.js"></script>
+    <script>
+        function caca(){
+            toastr.warning('La temperatura ha ascendido a los 27º', '17:00');
+            toastr.warning('La iluminación es baja', '22:00 - 6:00');
+            toastr.warning('La humedad ha excedido el 75%', '17:00');
+            toastr.warning('La temperatura ha bajado de los 10º', '00:00')
+        }
+    </script>
+
+        		<!-- Nav -->
+    		<nav id="nav" class="navbar">
+    			<div class="container">
+
+    				<div class="navbar-header">
+    					<!-- Logo -->
+    					<div class="navbar-brand">
+    						<a href="/gps2">
+    							<img class="logo" src="img/logo.png" alt="logo">
+    							<img class="logo-alt" src="img/logo-alt.png" alt="logo">
+    						</a>
+    					</div>
+    					<!-- /Logo -->
+
+    					<!-- Collapse nav button -->
+    					<div class="nav-collapse">
+    						<span></span>
+    					</div>
+    					<!-- /Collapse nav button -->
+    				</div>
+
+            <!--  Main navigation  -->
+                <ul class="main-nav nav navbar-nav navbar-right">
+                  <li>
+                      <p>Usuario logueado: <span id="usulogieado"></span></p>
+                  </li>
+                    <li class="active">
+                        <a href="http://localhost:8080/gps2">Mis Campos</a>
+                    </li>
+                    <li>
+                        <a href="http://localhost:8080/contacto">Asistencia</a>
+                    </li>
+                    <li>
+                        <a href="http://localhost:8080/editar">Editar Perfil</a>
+                    </li>
+                    <li >
+                        <a href="http://localhost:8080/faq">FAQ</a>
+                    </li>
+                    <li>
+                        <a href="http://localhost:8080/signin">Cerrar Sesión</a>
+                    </li>
+                </ul>
+                <!-- /Main navigation -->
+
+    			</div>
+    		</nav>
+    		<!-- /Nav -->
+        <!-- Pricing -->
+        <div style="background-color: #fafafa;" id="pricing" class="section">
+
+            <!-- Container -->
+            <div class="container-fluid">
+
+                <!-- Row -->
+                <div class="row">
+                        <div class="login100-form validate-form">
+                                <div id="map">
+
+                                </div>
+                            </div>
+
+                </div>
+                <!-- Row -->
+
+            </div>
+            <!-- /Container -->
+
+        </div>
+        <nav id="nav2" class="navbar">
+    			<div class="container">
+
+    				<div class="navbar-header">
+              <div>
+                  <select class="custom-select my-1 mr-sm-2" id="campos">
+                    <option value="0">Seleccionar campo</option>
+                      <option value="1" onclick="moveToLocation("38.895185", "-0.221711")">Campo 1</option>
+                      <option value="2" onclick="moveToLocation("39.011066", "-0.269261")">Campo 2</option>
+                  </select>
+              </div>
+              <div class="alerta" align="right"  >
+                <button type="button" name="alerta"><i class="fa fa-bell" onclick="caca()"></i></button>
+              </div>
+            </div>
+
+    			</div>
+    		</nav>
+        <!-- /Pricing -->
+        <!-- Modal grafica -->
+        <div id="myModalGraphic" class="modal fade">
+            <div class="modal-dialog modal-lg">
+                <div class="modal-content">
+                    <div class="modal-header">
+                      <p>Pulsar los botones de colores para desactivar el parámetro asociado.</p>
+                      <p>Para ver la gráfica con más detalle poner el móvil en horizontal.</p>
+
+                        <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+
+                    </div>
+                    <div class="modal-body">
+                        <div style="width:100%;">
+
+                            <canvas id="canvas"></canvas>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div id="myModal2" class="modal fade">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+
+                    <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+
+                </div>
+                <div class="modal-body" name=VaIn id=VaIn type=hidden value='0'>
+                    <ul class="list-group">
+                        <li class="list-group-item">Si pulsas en la campanita podrás ver las notificaciones.<i class="fas fa-bell"></i></li>
+                        <li class="list-group-item">En el despegable podrás elegir el campo deseado.<i class="fas fa-map-marker fa-lg"></i></li>
+                        <li class="list-group-item">Pulsando el marcador de la sonda podrás ver las medidas a tiempo real, y si quieres más información puedes abrir la gráfica completa pulsando en ver gráfica.<i class="fas fa-check"></i></li>
+
+                    </ul>
+                </div>
+            </div>
+        </div>
+        </div>
+        <button type="button" class="btn btn-info" data-toggle="popover" data-placement="bottom" title='<a onclick="argar_medidas(mac)">Más información</a>' data-content='<i class="fas fa-tint fa-lg">45</i>
+             <i class="fas fa-thermometer-half fa-lg onclick=""">32</i>
+             <i class="fas fa-diagnoses fa-lg">21</i>
+             <i class="fas fa-sun fa-lg"></i>'>
+
+
+Medidas a tiempo real.
+</button>
+<script type="text/javascript">
+function readCookie(name) {
+
+  var nameEQ = name + "=";
+  var ca = document.cookie.split(';');
+
+  for(var i=0;i < ca.length;i++) {
+
+    var c = ca[i];
+    while (c.charAt(0)==' ') c = c.substring(1,c.length);
+    if (c.indexOf(nameEQ) == 0) {
+      return decodeURIComponent( c.substring(nameEQ.length,c.length) );
+    }
+
+  }
+
+  return null;
+
+}
+
+
+  document.getElementById('usulogieado').innerHTML = readCookie( "usuario" );
+
+
+</script>
+
+
+        <!-- jQuery Plugins -->
+        <script type="text/javascript" src="js/jquery.min.js"></script>
+        <script type="text/javascript" src="js/bootstrap.min.js"></script>
+        <script type="text/javascript" src="js/owl.carousel.min.js"></script>
+        <script type="text/javascript" src="js/jquery.magnific-popup.js"></script>
+        <script type="text/javascript" src="js/main.js"></script>
+
+        <script src="sweetalert/dist/sweetalert2.all.min.js"></script>
+
+        <script>
+            function initMap() {
+                map = new google.maps.Map(document.getElementById("map"), {
+                    zoom: 10,
+                    center: {
+                        lat: 38.9922807,
+                        lng: -0.1735785
+                    },
+                    streetViewControl: false
+                    mapTypeId: google.maps.MapTypeId.SATELLITE
+
+
+
+
+                });
+                
+
+
+                /*Para que se ajuste el mapa entre los puntos introducidos*/
+                /*
+                    var limites = new google.maps.LatLngBounds();
+                    limites.extend(sonda1.getPosition());
+                    limites.extend(sonda2.getPosition());
+
+                    map.fitBounds(limites);
+                    */
+
+
+
+                /*var limite2 = new google.maps.LatLngBounds();
+
+                limite2.extend();
+
+                map.fitBounds(limite2);
+                */
+            } //script
+
+
+            // Adds a marker to the map and push to the array.
+            function addMarker(location) {
+                var marker = new google.maps.Marker({
+                    position: location,
+                    map: map
+                });
+                markers.push(marker);
+            }
+
+            // Sets the map on all markers in the array.
+            function setMapOnAll(map) {
+                for (var i = 0; i < markers.length; i++) {
+                    markers[i].setMap(map);
+                }
+            }
+            function moveToLocation(lat, lng) {
+                var center = new google.maps.LatLng(lat, lng);
+                // using global variable:
+                map.panTo(center);
+
+
+
+
+          };
+
+
+        </script>
+        <script>
+            /*
+                                        Rellena el select del formulario con la lista de sensores
+                                    */
+            function cargar_sensores() {
+                // pedimos la lista de sensores
+                fetch('/campos', {
+                        credentials: 'include'
+                    })
+                    .then((respuesta) => respuesta.json())
+                    .then((respuesta) => {
+                        // recorremos el array y rellenamos el select con los datos
+                        for (let i in respuesta) {
+                            let o = document.createElement('option')
+                            o.text = respuesta[i].mac
+                            document.getElementById('campos').add(o)
+                        }
+                        // cargamos las medidas correspondientes al primer sensor de la lista
+                        cargar_medidas()
+                    })
+            }
+
+            /*
+                Pone en la tabla las medidas correspondientes al sensor seleccionado.
+                Se llama al cargar la página y cada vez que cambia la selección de la lista.
+            */
+            function cargar_medidas() {
+                // cogemos la mac de la lista
+                let mac = document.getElementById('campos').value
+
+                // hacemos la petición al servidor
+                fetch('/medidas?mac=' + mac, {
+                        credentials: 'include'
+                    })
+                    // procesamos el JSON
+                    .then((respuesta) => respuesta.json())
+                    .then((respuesta) => {
+                        // primero vaciamos la tabla
+                        let tabla = document.getElementById('medidas')
+                        tabla.innerHTML =
+                            '<tr><th>Fecha/Hora</th><th>Temperatura</th><th>Humedad</th><th>Salinidad</th><th>Iluminacion</th><th>Presion</th>';
+                        // y luego añadimos los datos fila a fila y columna a columna
+                        for (let i in respuesta) {
+                            let fila = tabla.insertRow(1)
+                            fila.insertCell(0).innerHTML =
+                                respuesta[i].tiempo
+                            fila.insertCell(1).innerHTML =
+                                respuesta[i].temperatura
+                            fila.insertCell(2).innerHTML =
+                                respuesta[i].humedad
+                            fila.insertCell(3).innerHTML =
+                                respuesta[i].salinidad
+                            fila.insertCell(4).innerHTML =
+                                respuesta[i].iluminacion
+                            fila.insertCell(5).innerHTML =
+                                respuesta[i].presion
+                        }
+                    })
+            }
+        </script>
+        <script>
+
+
+
+
+
+
+
+
+
+            function cargar_sensores() {
+                // pedimos la lista de sensores
+                fetch('/sensores', {
+                        credentials: 'include'
+                    })
+                    .then((respuesta) => respuesta.json())
+                    .then((respuesta) => {
+
+                        for (var i = 0; i < respuesta.length; i++) {
+
+                            let mac = respuesta[i].mac;
+
+                            let coords = {
+                                lat: respuesta[i].lat,
+                                lng: respuesta[i].lng
+                            };
+
+                            let marker = new google.maps.Marker({
+                                position: coords,
+                                map: map
+                            });
+
+                            marker.app
+
+                            map.setZoom(18);
+
+                            marker.addListener('click', function () {
+                                cargar_medidas(mac);
+                            });
+
+                            moveToLocation(coords.lat, coords.lng);
+
+
+                        }
+
+
+
+
+
+                    })
+            }
+
+
+
+
+
+            function cargar_medidas(mac) {
+                for (i = 0; i < lineChartData.datasets.length; i++) {
+                    lineChartData.datasets[i].data = [];
+                }
+
+                // hacemos la petición al servidor
+                fetch('/medidas?mac=' + mac, {
+                        credentials: 'include'
+                    })
+                    // procesamos el JSON
+                    .then((respuesta) => respuesta.json())
+                    .then((data) => {
+
+                        data.map(sensor => {
+                            lineChartData.datasets[0].data.push(sensor.temperatura);
+                            lineChartData.datasets[1].data.push(sensor.humedad);
+                            lineChartData.datasets[2].data.push(sensor.salinidad);
+                            lineChartData.datasets[3].data.push(sensor.iluminacion);
+                            lineChartData.datasets[4].data.push(sensor.presion);
+                        })
+
+                    })
+
+                setTimeout(function () {
+                    window.myLine.update();
+                }, 200);
+
+                // Mostramos modal con grafica
+                $("#myModalGraphic").modal('show');
+            }
+
+
+            cargar_sensores();
+        </script>
+
+
+        <script type="text/javascript">
+            var lineChartData = {
+                responsive: true,
+                type: 'horizontalBar',
+                labels: [24, 01, 02, 03, 04, 05, 06, 07, 08, 09, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23],
+                datasets: [{
+                        label: "Temperatura",
+                        borderColor: window.chartColors.red,
+                        backgroundColor: window.chartColors.red,
+                        fill: false,
+                        data: [],
+                        yAxisID: 'y-axis-1',
+                    },
+                    {
+                        label: "Humedad",
+                        borderColor: window.chartColors.blue,
+                        backgroundColor: window.chartColors.blue,
+                        fill: false,
+                        data: [],
+                        yAxisID: 'y-axis-1',
+                    },
+                    {
+                        label: "Salinidad",
+                        borderColor: window.chartColors.green,
+                        backgroundColor: window.chartColors.green,
+                        fill: false,
+                        data: [],
+                        yAxisID: 'y-axis-1',
+                    },
+                    {
+                        label: "Iluminación",
+                        borderColor: window.chartColors.yellow,
+                        backgroundColor: window.chartColors.yellow,
+                        fill: false,
+                        data: [],
+                        yAxisID: 'y-axis-1',
+                    },
+                    {
+                        label: "Presión",
+                        borderColor: window.chartColors.orange,
+                        backgroundColor: window.chartColors.orange,
+                        fill: false,
+                        data: [],
+                        yAxisID: 'y-axis-1',
+                    }
+                ]
+            };
+
+            window.onload = function () {
+                var ctx = document.getElementById('canvas').getContext('2d');
+                window.myLine = Chart.Line(ctx, {
+                    data: lineChartData,
+                    options: {
+                        responsive: true,
+                        hoverMode: 'index',
+                        stacked: false,
+                        title: {
+                            display: true,
+                            text: ''
+                        },
+                        scales: {
+                            yAxes: [{
+                                type: 'linear', // only linear but allow scale type registration. This allows extensions to exist solely for log scale for instance
+                                display: true,
+                                position: 'left',
+                                id: 'y-axis-1',
+                            }, {
+                                type: 'linear', // only linear but allow scale type registration. This allows extensions to exist solely for log scale for instance
+                                display: true,
+                                position: 'right',
+                                id: 'y-axis-2',
+
+                                // grid line settings
+                                gridLines: {
+                                    drawOnChartArea: false, // only want the grid lines for one axis to show up
+                                },
+                            }],
+                        }
+                    }
+                });
+            };
+        </script>
+        <script>
+        $(document).ready(function() {
+            $("#myModal2").modal('show');
+        });
+
+    </script>
+    <script type="text/javascript">
+        $(document).ready(function() {
+            $('[data-toggle="popover"]').popover({
+                html: true
+            });
+        });
+
+
+    </script>
+
+    <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDKtAd-sURxo8U6VoFVRdNKaLL66sEBFE8&callback=initMap" type="text/javascript"></script>
+        <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCgdovwxNEmvNQ3wKpaVZx_FSgVAfEBNH4&callback=initMap">
+        </script>
+      </body>
+
+      </html>

@@ -1,0 +1,349 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+
+    <title>Mi Perfil</title>
+
+    <!-- Google font -->
+    <link href="https://fonts.googleapis.com/css?family=Montserrat:400,700%7CVarela+Round" rel="stylesheet">
+
+    <!-- Bootstrap -->
+    <link type="text/css" rel="stylesheet" href="css/bootstrap.min.css" />
+
+    <!-- Owl Carousel -->
+    <link type="text/css" rel="stylesheet" href="css/owl.carousel.css" />
+    <link type="text/css" rel="stylesheet" href="css/owl.theme.default.css" />
+
+    <!-- Magnific Popup -->
+    <link type="text/css" rel="stylesheet" href="css/magnific-popup.css" />
+
+    <!-- Font Awesome Icon -->
+    <link rel="stylesheet" href="css/font-awesome.min.css">
+
+    <!-- Custom stlylesheet -->
+    <link type="text/css" rel="stylesheet" href="css/style.css" />
+    <link href="sweetalert/dist/sweetalert2.css" rel="stylesheet">
+
+    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+		<script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
+		<script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
+    <style>
+        @import url(http://fonts.googleapis.com/css?family=Roboto);
+
+        /****** LOGIN MODAL ******/
+
+        .loginmodal-container {
+            padding: 30px;
+            max-width: 350px;
+            width: 100% !important;
+            background-color: #F7F7F7;
+            margin: 0 auto;
+            border-radius: 2px;
+            box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.3);
+            overflow: hidden;
+            font-family: roboto;
+        }
+
+        .loginmodal-container h1 {
+            text-align: center;
+            font-size: 1.8em;
+            font-family: roboto;
+        }
+
+        .loginmodal-container input[type=submit] {
+            width: 100%;
+            display: block;
+            margin-bottom: 10px;
+            position: relative;
+        }
+
+        .loginmodal-container input[type=text],
+        input[type=password] {
+            height: 44px;
+            font-size: 16px;
+            width: 100%;
+            margin-bottom: 10px;
+            -webkit-appearance: none;
+            background: #fff;
+            border: 1px solid #d9d9d9;
+            border-top: 1px solid #c0c0c0;
+            /* border-radius: 2px; */
+            padding: 0 8px;
+            box-sizing: border-box;
+            -moz-box-sizing: border-box;
+        }
+
+        .loginmodal-container input[type=text]:hover,
+        input[type=password]:hover {
+            border: 1px solid #b9b9b9;
+            border-top: 1px solid #a0a0a0;
+            -moz-box-shadow: inset 0 1px 2px rgba(0, 0, 0, 0.1);
+            -webkit-box-shadow: inset 0 1px 2px rgba(0, 0, 0, 0.1);
+            box-shadow: inset 0 1px 2px rgba(0, 0, 0, 0.1);
+        }
+
+        .loginmodal {
+            text-align: center;
+            font-size: 14px;
+            font-family: 'Arial', sans-serif;
+            font-weight: 700;
+            height: 36px;
+            padding: 0 8px;
+            /* border-radius: 3px; */
+            /* -webkit-user-select: none;
+  user-select: none; */
+        }
+
+        .loginmodal-submit {
+            /* border: 1px solid #3079ed; */
+            border: 0px;
+            color: #fff;
+            text-shadow: 0 1px rgba(0, 0, 0, 0.1);
+            background-color: #4d90fe;
+            padding: 17px 0px;
+            font-family: roboto;
+            font-size: 14px;
+            /* background-image: -webkit-gradient(linear, 0 0, 0 100%,   from(#4d90fe), to(#4787ed)); */
+        }
+
+        .loginmodal-submit:hover {
+            /* border: 1px solid #2f5bb7; */
+            border: 0px;
+            text-shadow: 0 1px rgba(0, 0, 0, 0.3);
+            background-color: #357ae8;
+            /* background-image: -webkit-gradient(linear, 0 0, 0 100%,   from(#4d90fe), to(#357ae8)); */
+        }
+
+        .loginmodal-container a {
+            text-decoration: none;
+            color: #666;
+            font-weight: 400;
+            text-align: center;
+            display: inline-block;
+            opacity: 0.6;
+            transition: opacity ease 0.5s;
+        }
+
+        .login-help {
+            font-size: 12px;
+        }
+
+        .container {}
+
+        h2 {
+            color: black;
+        }
+    </style>
+    <script type="text/javascript">
+            function alertt() {
+                //Ingresamos un mensaje a mostrar
+                var mensaje
+                //Detectamos si el usuario acepto el mensaje
+                if (!mensaje) {
+                    Swal('','La contraseña se ha cambiado correctamente', 'success')
+                }
+                //Detectamos si el usuario denegó el mensaje
+                else {
+                    Swal('','Ha ocurrido un error','error')
+                }
+            }
+            </script>
+</head>
+
+<body>
+    <!-- Header -->
+    <header id="home">
+
+        <!-- Nav -->
+		<nav id="nav" class="navbar">
+			<div class="container">
+
+				<div class="navbar-header">
+					<!-- Logo -->
+					<div class="navbar-brand">
+						<a href="/gps2">
+							<img class="logo" src="img/logo.png" alt="logo">
+							<img class="logo-alt" src="img/logo-alt.png" alt="logo">
+						</a>
+					</div>
+					<!-- /Logo -->
+
+					<!-- Collapse nav button -->
+					<div class="nav-collapse">
+						<span></span>
+					</div>
+					<!-- /Collapse nav button -->
+				</div>
+
+				<!--  Main navigation  -->
+            <ul class="main-nav nav navbar-nav navbar-right">
+              <li>
+                  <p>Usuario logueado: <span id="usulogieado"></span></p>
+              </li>
+                <li>
+                    <a href="http://localhost:8080/gps2">Mis Campos</a>
+                </li>
+                <li>
+                    <a href="http://localhost:8080/contacto">Asistencia</a>
+                </li>
+                <li class="active">
+                    <a href="http://localhost:8080/editar">Editar Perfil</a>
+                </li>
+                <li>
+                    <a href="http://localhost:8080/faq">FAQ</a>
+                </li>
+                <li>
+                    <a href="http://localhost:8080/signin">Cerrar Sesión</a>
+                </li>
+            </ul>
+            <!-- /Main navigation -->
+
+			</div>
+		</nav>
+		<!-- /Nav -->
+
+        <!-- Contact -->
+        <div style="background-color: #fafafa" id="contact" class="section md-padding">
+
+            <!-- Container -->
+            <div class="container">
+
+
+                    <!-- Section-header -->
+                    <div class="section-header text-center">
+                        <h2 class="title" font-color="#fff">Mi Perfil</h2>
+                    </div>
+                    <!-- edit form column -->
+
+
+                                <!-- home content -->
+                                <div class="col-md-10 col-md-offset-1">
+                                    <div class="home-content">
+                                        <div class="loginmodal-container">
+                                            <p style="color: red" id="notificacion"></p>
+                                            <br>
+                                            <form action="/editarm" onsubmit="return cambiar()" method="POST">
+                                            <input id="nombre" type="text" name="nombre" placeholder="Nombre" value="" required>
+                                            <input id="apellido" type="text" name="apellido" placeholder="Apellido" value="" required>
+                                            <input id="email" type="text" name="email" placeholder="E-mail" value="" required>
+                                            <input id="contrasenya1" type="password" name="contrasenya1" placeholder="Nueva Contraseña" required>
+
+                                            <input id="contrasenya2" type="password" name="contrasenya2" placeholder="Confirmar Contraseña" required>
+                                            <button id="" class="main-btn" onclick="alertt()">Guardar</button>
+                                            <input type="reset" class="btn btn-default" value="Cancelar">
+
+                                          </form>
+
+                                        </div>
+                                    </div>
+                                </div>
+
+<script type="text/javascript">
+function readCookie(name) {
+
+  var nameEQ = name + "=";
+  var ca = document.cookie.split(';');
+
+  for(var i=0;i < ca.length;i++) {
+
+    var c = ca[i];
+    while (c.charAt(0)==' ') c = c.substring(1,c.length);
+    if (c.indexOf(nameEQ) == 0) {
+      return decodeURIComponent( c.substring(nameEQ.length,c.length) );
+    }
+
+  }
+
+  return null;
+
+}
+
+  document.getElementById('nombre').value = readCookie( "usuario" );
+  document.getElementById('apellido').value = readCookie( "apellido" );
+  document.getElementById('email').value = readCookie( "email" );
+
+  document.getElementById('usulogieado').innerHTML = readCookie( "usuario" );
+
+
+</script>
+
+                                <!-- /home content -->
+
+
+            </div>
+            <!-- /Container -->
+
+        </div>
+        <!-- /Contact -->
+
+
+    </header>
+
+    <!-- Preloader >
+    <div id="preloader">
+        <div class="preloader">
+            <span></span>
+            <span></span>
+            <span></span>
+            <span></span>
+        </div>
+    </div-->
+    <!-- /Preloader -->
+
+    <!-- jQuery Plugins -->
+    <script type="text/javascript" src="js/jquery.min.js"></script>
+    <script type="text/javascript" src="js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="js/owl.carousel.min.js"></script>
+    <script type="text/javascript" src="js/jquery.magnific-popup.js"></script>
+    <script type="text/javascript" src="js/main.js"></script>
+    <script src="sweetalert/dist/sweetalert2.all.min.js"></script>
+
+    <script>
+      function alertt(){
+        // Area de mensajes
+        let notificacion = document.getElementById('notificacion');
+
+        if(contrasenya1 == contrasenya2 & contrasenya1=!null){
+          Swal('','La contraseña se ha cambiado correctamente', 'success')
+        }else{
+            Swal('','Ha ocurrido un error','error')
+        }
+
+        // Valores formulario
+        let nombre = document.getElementById('nombre').value;
+        let apellido = document.getElementById('apellido').value;
+        let email = document.getElementById('email').value;
+        let contrasenya1 = document.getElementById('contrasenya1').value;
+        let contrasenya2 = document.getElementById('contrasenya2').value;
+
+        // Comprobar si coinciden contraseñas
+
+      }
+    </script>
+    <script type="text/javascript">
+        function email() {
+            //Ingresamos un mensaje a mostrar
+            var mensaje
+            //Detectamos si el usuario acepto el mensaje
+            if (!mensaje){
+
+            Swal('', 'El email se ha enviado correctamente', 'success')
+            }
+            //Detectamos si el usuario denegó el mensaje
+            else {
+                Swal('', 'Ha ocurrido un error', 'error')
+            }
+        }
+        </script>
+
+</body>
+
+</html>

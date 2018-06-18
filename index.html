@@ -1,0 +1,523 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+
+	<title>Inicio</title>
+
+	<!-- Google font -->
+	<link href="https://fonts.googleapis.com/css?family=Montserrat:400,700%7CVarela+Round" rel="stylesheet">
+
+	<!-- Bootstrap -->
+	<link type="text/css" rel="stylesheet" href="css/bootstrap.min.css" />
+
+	<!-- Owl Carousel -->
+	<link type="text/css" rel="stylesheet" href="css/owl.carousel.css" />
+	<link type="text/css" rel="stylesheet" href="css/owl.theme.default.css" />
+
+	<!-- Magnific Popup -->
+	<link type="text/css" rel="stylesheet" href="css/magnific-popup.css" />
+
+	<!-- Font Awesome Icon -->
+	<link rel="stylesheet" href="css/font-awesome.min.css">
+
+	<!-- Custom stlylesheet -->
+	<link type="text/css" rel="stylesheet" href="css/style.css" />
+	<link href="sweetalert/dist/sweetalert2.css" rel="stylesheet">
+
+	<!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+	<!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+	<!--[if lt IE 9]>
+		<script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
+		<script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+	<![endif]-->
+
+	<style>
+		.login-button a {
+			border-radius: 5%;
+			background-color: #6195FF;
+			padding-left: 7px;
+			padding-right: 7px;
+		}
+		@keyframes flecha-animada {
+    from {
+        transform: translate(0);
+    }
+    50% {
+        transform: translateY(15px);
+    }
+}  to{
+    transform: translate(0);
+}
+
+
+.flecha-bajar a{
+    display: inline-block;
+    color: #fff;
+    font-size: 3rem;
+		position: relative;
+		bottom: -220px;
+    animation: flecha-animada 2s ease-in-out infinite;
+}
+	</style>
+</head>
+
+<body>
+	<!-- Header -->
+	<header id="home">
+		<!-- Background Image -->
+		<div class="bg-img" style="background-image: url('./img/background1.jpg');">
+			<div class="overlay"></div>
+		</div>
+		<!-- /Background Image -->
+
+		<!-- Nav -->
+		<nav id="nav" class="navbar nav-transparent">
+			<div class="container">
+
+				<div class="navbar-header">
+					<!-- Logo -->
+					<div class="navbar-brand">
+						<a href="/">
+							<img class="logo" src="img/logo.png" alt="logo">
+							<img class="logo-alt" src="img/logo-alt.png" alt="logo">
+						</a>
+					</div>
+					<!-- /Logo -->
+
+					<!-- Collapse nav button -->
+					<div class="nav-collapse">
+						<span></span>
+					</div>
+					<!-- /Collapse nav button -->
+				</div>
+
+				<!--  Main navigation  -->
+				<ul class="main-nav nav navbar-nav navbar-right">
+					<li class="active">
+						<a href="#home">Inicio</a>
+					</li>
+					<li>
+						<a href="#service">Acerca de</a>
+					</li>
+					<li>
+						<a href="#pricing">Contrata</a>
+					</li>
+					<li>
+						<a href="#contact">Contacto</a>
+					</li>
+					<li>
+						<a href="/signin">Iniciar Sesión</a>
+					</li>
+				</ul>
+				<!-- /Main navigation -->
+
+			</div>
+		</nav>
+		<!-- /Nav -->
+
+		<!-- home wrapper -->
+		<div class="home-wrapper">
+			<div class="container">
+				<div class="row">
+
+					<!-- home content -->
+					<div class="col-md-10 col-md-offset-1">
+						<div class="home-content">
+							<h1 class="white-text">La agricultura del futuro</h1>
+							<p class="white-text">
+								Una sonda de sensores que te permitirá controlar los factores que influyen en la calidad de tus cultivos, como la temperatura o la humedad.
+							</p>
+							<a style="color: white;" href="#service"><button class="white-btn">Más información</button></a>
+							<a style="color: white;" href="/signin"><button class="main-btn">Iniciar sesión</button></a>
+
+						</div>
+						<div class="flecha-bajar text-center">
+			 <a href="#service"><i class="fa fa-angle-down"></i></a>
+	 </div>
+					</div>
+					<!-- /home content -->
+
+
+				</div>
+			</div>
+		</div>
+
+		<!-- /home wrapper -->
+
+	</header>
+	<!-- /Header -->
+
+	<!-- Service -->
+	<div id="service" class="section md-padding">
+
+		<!-- Container -->
+		<div class="container">
+
+			<!-- Row -->
+			<div class="row">
+
+				<!-- Section header -->
+				<div class="section-header text-center">
+					<h2 class="title">Que ofrecemos</h2>
+				</div>
+				<!-- /Section header -->
+
+				<!-- service -->
+				<div class="col-md-4 col-sm-6">
+					<div class="service">
+						<i class="fa fa-key"></i>
+						<h3>Control</h3>
+						<p>Te ayudaremos a controlar mejor tus campos, monitorizándolos.</p>
+					</div>
+				</div>
+				<!-- /service -->
+
+				<!-- service -->
+				<div class="col-md-4 col-sm-6">
+					<div class="service">
+						<i class="fa fa-align-justify"></i>
+						<h3>Facilidad</h3>
+						<p>Con un simple click, podrás obtener los datos de tus campos.</p>
+					</div>
+				</div>
+				<!-- /service -->
+
+				<!-- service -->
+				<div class="col-md-4 col-sm-6">
+					<div class="service">
+						<i class="fa fa-phone"></i>
+						<h3>Soporte</h3>
+						<p>Si tienes algún problema, solo has de ponerte en <a href="#contact">contacto </a>con nosotros.</p>
+					</div>
+				</div>
+				<!-- /service -->
+
+				<!-- service -->
+				<div class="col-md-4 col-sm-6">
+					<div class="service">
+						<i class="fa fa-diamond"></i>
+						<h3>Innovación</h3>
+						<p>Tendrás a tu disposición los últimos avances en tecnología.</p>
+					</div>
+				</div>
+				<!-- /service -->
+
+				<!-- service -->
+				<div class="col-md-4 col-sm-6">
+					<div class="service">
+						<i class="fa fa-pencil"></i>
+						<h3>Utilidad</h3>
+						<p>Te ahorrarás mucho trabajo y esfuerzo.</p>
+					</div>
+				</div>
+				<!-- /service -->
+
+				<!-- service -->
+				<div class="col-md-4 col-sm-6">
+					<div class="service">
+						<i class="fa fa-leaf"></i>
+						<h3>Ecológico</h3>
+						<p>Y todo ésto con materiales y técnicas respetuosas con el medio ambiente.</p>
+					</div>
+				</div>
+				<!-- /service -->
+
+			</div>
+			<!-- /Row -->
+
+		</div>
+		<!-- /Container -->
+
+	</div>
+	<!-- /Service -->
+
+
+	<!-- Pricing -->
+	<div style="background-color: #fafafa;" id="pricing" class="section md-padding">
+
+		<!-- Container -->
+		<div class="container">
+
+			<!-- Row -->
+			<div class="row">
+
+				<!-- Section header -->
+				<div class="section-header text-center">
+					<h2 class="title">Planes</h2>
+				</div>
+				<!-- /Section header -->
+
+				<!-- pricing -->
+				<div class="col-sm-4">
+					<div class="pricing">
+						<div class="price-head">
+							<span class="price-title">Básico</span>
+							<div class="price">
+								<h3>9€
+									<span class="duration">/ mes</span>
+								</h3>
+							</div>
+						</div>
+						<ul class="price-content">
+							<li>
+								<p>Acceso a la plataforma</p>
+							</li>
+							<li>
+								<p>Un único usuario</p>
+							</li>
+							<li>
+								<p>Sin soporte</p>
+							</li>
+						</ul>
+						<div class="price-btn">
+							<button class="outline-btn"><a href="#contact">Contratar ahora</a></button>
+						</div>
+					</div>
+				</div>
+				<!-- /pricing -->
+
+				<!-- pricing -->
+				<div class="col-sm-4">
+					<div class="pricing">
+						<div class="price-head">
+							<span class="price-title">Intermedio</span>
+							<div class="price">
+								<h3>15€
+									<span class="duration">/ mes</span>
+								</h3>
+							</div>
+						</div>
+						<ul class="price-content">
+							<li>
+								<p>Acceso a la plataforma</p>
+							</li>
+							<li>
+								<p>Hasta 3 usuarios</p>
+							</li>
+							<li>
+								<p>Soporte limitado</p>
+							</li>
+						</ul>
+						<div class="price-btn">
+							<button class="outline-btn"><a href="#contact">Contratar ahora</a></button>
+						</div>
+					</div>
+				</div>
+				<!-- /pricing -->
+
+				<!-- pricing -->
+				<div class="col-sm-4">
+					<div class="pricing">
+						<div class="price-head">
+							<span class="price-title">Pro</span>
+							<div class="price">
+								<h3>25€
+									<span class="duration">/ mes</span>
+								</h3>
+							</div>
+						</div>
+						<ul class="price-content">
+							<li>
+								<p>Acceso a la plataforma</p>
+							</li>
+							<li>
+								<p>Usuarios ilimitados</p>
+							</li>
+							<li>
+								<p>Soporte 24 horas</p>
+							</li>
+						</ul>
+						<div class="price-btn">
+							<button class="outline-btn"><a href="#contact">Contratar ahora</a></button>
+						</div>
+					</div>
+				</div>
+				<!-- /pricing -->
+
+			</div>
+			<!-- Row -->
+
+		</div>
+		<!-- /Container -->
+
+	</div>
+	<!-- /Pricing -->
+
+
+	<!-- Contact -->
+	<div id="contact" class="section md-padding">
+
+		<!-- Container -->
+		<div class="container">
+
+			<!-- Row -->
+			<div class="row">
+
+				<!-- Section-header -->
+				<div class="section-header text-center">
+					<h2 class="title">Contacto</h2>
+				</div>
+				<!-- /Section-header -->
+
+				<!-- contact -->
+				<div class="col-sm-4">
+					<div class="contact">
+						<i class="fa fa-phone"></i>
+						<h3>Teléfono</h3>
+						<p>96 242 55 43</p>
+					</div>
+				</div>
+				<!-- /contact -->
+
+				<!-- contact -->
+				<div class="col-sm-4">
+					<div class="contact">
+						<i class="fa fa-envelope"></i>
+						<h3>Email</h3>
+						<p>brian@soporte.com</p>
+					</div>
+				</div>
+				<!-- /contact -->
+
+				<!-- contact -->
+				<div class="col-sm-4">
+					<div class="contact">
+						<i class="fa fa-map-marker"></i>
+						<h3>Localización</h3>
+						<p>Gandía</p>
+					</div>
+				</div>
+				<!-- /contact -->
+
+				<!-- contact form -->
+				<div class="col-md-8 col-md-offset-2">
+					<form class="contact-form">
+						<input type="text" class="input" placeholder="Nombre">
+						<input type="email" class="input" placeholder="Email">
+						<input type="text" class="input" placeholder="Asunto">
+						<textarea class="input" placeholder="Mensaje"></textarea>
+					</form>
+				</div>
+				<!-- /contact form -->
+
+			</div>
+			<!-- /Row -->
+
+		</div>
+		<!-- /Container -->
+		<div class="enviar text-center">
+            <button class="main-btn" onclick="email()">Enviar</button>
+        </div>
+
+	</div>
+	<!-- /Contact -->
+
+
+	<!-- Footer -->
+	<footer id="footer" class="sm-padding bg-dark">
+
+		<!-- Container -->
+		<div class="container">
+
+			<!-- Row -->
+			<div class="row">
+
+				<div class="col-md-12">
+
+					<!-- footer logo -->
+					<div class="footer-logo">
+						<a href="index.html">
+							<img src="img/logo-alt.png" alt="logo">
+						</a>
+					</div>
+					<!-- /footer logo -->
+
+					<!-- footer follow -->
+					<ul class="footer-follow">
+                        <li>
+                            <a href="https://www.facebook.com/">
+                                <i class="fa fa-facebook"></i>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="https://www.twitter.com/">
+                                <i class="fa fa-twitter"></i>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="https://plus.google.com/">
+                                <i class="fa fa-google-plus"></i>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="https://www.instagram.com/">
+                                <i class="fa fa-instagram"></i>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="https://www.youtube.com/">
+                                <i class="fa fa-youtube"></i>
+                            </a>
+                        </li>
+                    </ul>
+					<!-- /footer follow -->
+
+					<!-- footer copyright -->
+					<div class="footer-copyright">
+						<p>Copyright © 2018. Todos los derechos reservados.
+						</p>
+					</div>
+					<!-- /footer copyright -->
+
+				</div>
+
+			</div>
+			<!-- /Row -->
+
+		</div>
+		<!-- /Container -->
+
+	</footer>
+	<!-- /Footer -->
+
+	<!-- Back to top -->
+	<div id="back-to-top"></div>
+	<!-- /Back to top -->
+
+	<!-- Preloader -->
+	<div id="preloader">
+		<div class="preloader">
+			<span></span>
+			<span></span>
+			<span></span>
+			<span></span>
+		</div>
+	</div>
+	<!-- /Preloader -->
+
+	<!-- jQuery Plugins -->
+	<script type="text/javascript" src="js/jquery.min.js"></script>
+	<script type="text/javascript" src="js/bootstrap.min.js"></script>
+	<script type="text/javascript" src="js/owl.carousel.min.js"></script>
+	<script type="text/javascript" src="js/jquery.magnific-popup.js"></script>
+	<script type="text/javascript" src="js/main.js"></script>
+	<script src="sweetalert/dist/sweetalert2.all.min.js"></script>
+
+    <script>
+        function email() {
+
+            Swal('Perfecto', 'El email se ha enviado correctamente', 'success')
+
+        }
+    </script>
+
+
+
+</body>
+
+</html>
